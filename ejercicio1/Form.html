@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styless.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" action="insertar.php">
+        <h1>Inserción de vivienda</h1>
+        <fieldset>
+            <legend> Ingrese los datos de la nueva Vivienda</legend>
+            <p>
+                <label> Tipo de Vivienda:
+                      <select id="tipocasa" name="tipocasa">
+                        <option value="piso">Piso</option>
+                        <option value="adosado">Adosado</option>
+                        <option value="casa">Casa</option>
+                        <option value="chalet">Chalet</option>
+                      </select>
+                </label>
+            </p>
+            <p>
+                <label> Zona:
+                      <select id="zona" name="zona">
+                        <option value="nervion">nervion</option>
+                        <option value="centro">centro</option>
+                        <option value="macarena">macarena</option>
+                        <option value="aljarafe ">aljarafe</option>
+                        <option value="triana">triana</option>
+                      </select>
+                </label>
+            </p>
+            <p>
+                <label> Direccion:
+                    <input type="text" name="direccion" />
+                </label>
+            </p>    
+            <p>
+
+            <p>
+                <label for="dormitorios">Numero dormitorios:</label>
+                <input type="radio" id="dormitorios" name="dormitorios" value="1">
+                <label for="dormitorios">1</label>
+                <input type="radio" id="dormitorios" name="dormitorios" value="2">
+                <label for="dormitorios">2</label>
+                <input type="radio" id="dormitorios" name="dormitorios" value="3">
+                <label for="dormitorios">3</label>
+                <input type="radio" id="dormitorios" name="dormitorios" value="4">
+                <label for="dormitorios">4</label>
+                <input type="radio" id="dormitorios" name="dormitorios" value="5">
+                <label for="dormitorios">5</label><br>
+            </p>
+            <p>
+                <label> Precio:
+                    <input type="number" name="precio" />
+                </label>
+            </p>
+            <p>
+                <label> Tamaño:
+                    <input type="number" name="tamaño" />
+                </label>
+            </p>
+            <p>
+                <input type="checkbox" name="extras[]" value="piscina"><label>Piscina</label><br/>
+                <input type="checkbox" name="extras[]" value="jardin"><label>Jardin</label><br/>
+                <input type="checkbox" name="extras[]" value="garaje"><label>Garaje</label><br/>
+            </p>
+            <p>
+                <label> Foto:
+                    <input type="text" name="foto" />
+                </label>
+            </p>
+            <label> Observaciones:</label>
+            <p> 
+                
+                <textarea name="observaciones" rows="10" cols="50">Write something here</textarea>            
+            </p>
+            <p>
+                <input type="submit" value="Insertar Vivienda" />
+            </p>
+        </fieldset>
+    </form>
+</body>
+
+</html>
