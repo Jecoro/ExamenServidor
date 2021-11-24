@@ -15,13 +15,17 @@ if (isset($_POST['login'])) {
     $result = $query->fetch(PDO::FETCH_ASSOC);
 
     if (!$result) {
-        echo '<p class="error">Username password combination is wrong!</p>';
+        echo '<p class="error">La combinacion de usuario y contraseña no es correcta</p>';
+        echo "<a href='formulario.html'>Volver</a>";
     } else {
         if (($password == $result['password'])) {
             $_SESSION['user_id'] = $result['id'];
-            echo ('<p class="success">Hola, bienvenido de nuevo a nuestra aplicación '.$username."</p>");
+            $_SESSION['username'] = $result['username'];
+            $_SESSION['password'] = $result['password'];
+            echo ('<p class="success">Hola, bienvenido de nuevo a nuestra aplicación '.$_SESSION['username'] ."</p>");
         } else {
-            echo '<p class="error">Username password combination is wrong!</p>';
+            echo '<p class="error">La combinacion de usuario y contraseña no es correcta</p>';
+            echo "<a href='formulario.html'>Volver</a>";
         }
     }
     
