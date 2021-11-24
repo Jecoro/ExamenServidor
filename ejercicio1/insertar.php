@@ -19,12 +19,22 @@ if((empty($_POST['direccion']))|(empty($_POST['tamaño']))|(empty($_POST['precio
       if(empty($_POST['direccion'])){
             echo "No ha introducido la direccion <br>";
       }
-      if(empty($_POST['precio'])){
-            echo "No ha introducido el precio <br>";
+      if(empty($_POST['precio'])||!is_numeric($precio) || $precio < 1 || $precio != round($precio)){
+            echo "No ha introducido un precio adecuado <br>";
       }
-      if(empty($_POST['tamaño'])){
-            echo "No ha introducido el tamaño de la casa <br>";
+      if(empty($_POST['tamaño'])||!is_numeric($tamaño) || $tamaño < 1 || $tamaño != round($tamaño)){
+            echo "No ha introducido un tamaño adecuado <br>";
       }
+      if(empty($_POST['foto'])){
+            echo "No ha introducido un tamaño adecuado <br>";
+      }else{
+            $op=substr($foto,strlen($foto)-3, strlen($foto));
+            if (strcasecmp ($op , "png" )!=0 && strcasecmp ($op , "jpeg" )!=0 && strcasecmp ($op , "jpg" )!=0) {
+                  echo "No ha introducido una foto (formato png,jepg o jpg)'";
+            } 
+      }
+            
+      
 }else{ 
       
 //Connection
