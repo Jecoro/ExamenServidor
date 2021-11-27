@@ -13,6 +13,10 @@ $precio = $_POST['precio'];
 $tamaño = $_POST['tamaño'];
 $foto = $_POST['foto'];
 $extrasBBDD="";
+foreach($_POST['extras'] as $selected){
+      $extrasBBDD=$extrasBBDD.$selected;
+      }
+echo($extrasBBDD);
 $observaciones=$_POST['observaciones'];
 if((empty($_POST['direccion']))|(empty($_POST['tamaño']))|(empty($_POST['precio']))){
       
