@@ -1,7 +1,11 @@
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
---
+
+
+-- Autor: Jesus Cortazar Romera
+
+
 -- Servidor: 127.0.0.1
 -- Tiempo de generación: 15-11-2021 a las 20:14:02
 -- Versión del servidor: 10.4.20-MariaDB
@@ -35,7 +39,7 @@ CREATE TABLE `viviendas` (
   `ndormitorios` enum('1','2','3','4','5') NOT NULL DEFAULT '3',
   `precio` decimal(10,0) NOT NULL,
   `tamaño` decimal(10,0) NOT NULL,
-  `extras` set('piscina','jardin','garaje') NOT NULL,
+  `extras` varchar(100) NOT NULL,
   `foto` varchar(50) DEFAULT NULL,
   `observaciones` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

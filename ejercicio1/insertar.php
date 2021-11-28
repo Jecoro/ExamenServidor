@@ -1,9 +1,11 @@
 <?php
+//Autor: Jesus Cortazar Romera
+//Variables globales para la conexion con la bbdd
 $servername = "localhost";
 $database = "lindavista";
 $username = "usuario";
 $password = "usuario";
-
+//Variables obtenidas del formulario
 $tipo = $_POST['tipocasa'];
 $zona = $_POST['zona'];
 $direccion=$_POST['direccion'];
@@ -12,13 +14,16 @@ $ndormitorios = $_POST['dormitorios'];}else{$ndormitorios=3;}
 $precio = $_POST['precio'];
 $tamaño = $_POST['tamaño'];
 $foto = $_POST['foto'];
+//foreach para extraer los datos de las checkboxes
 $extrasBBDD="";
 foreach($_POST['extras'] as $selected){
       $extrasBBDD=$extrasBBDD.$selected;
       }
 echo($extrasBBDD);
+
+//comprobacion de que los datos son correctos antes de introducirlos
 $observaciones=$_POST['observaciones'];
-if((empty($_POST['direccion']))|(empty($_POST['tamaño']))|(empty($_POST['precio']))){
+if((empty($_POST['direccion']))|(empty($_POST['tamaño']))|(empty($_POST['precio']))|(!empty($_POST['foto']))){
       
       if(empty($_POST['direccion'])){
             echo "No ha introducido la direccion <br>";
@@ -41,9 +46,9 @@ if((empty($_POST['direccion']))|(empty($_POST['tamaño']))|(empty($_POST['precio
       
 }else{ 
       
-//Connection
+//Conexion
 $conn = mysqli_connect($servername, $username, $password, $database);
-// Check connection
+//comprobacion de la conexion
 if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
 }

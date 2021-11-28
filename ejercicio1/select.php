@@ -1,4 +1,5 @@
 <?php
+//Autor: Jesus Cortazar Romera
 $servername = "localhost";
 $database = "lindavista";
 $username = "lectura";

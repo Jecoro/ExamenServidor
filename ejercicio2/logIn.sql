@@ -1,4 +1,5 @@
 CREATE TABLE `users` (
+  --Autor: Jesus Cortazar Romera
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(25) NOT NULL,
   `password` varchar(255) NOT NULL,
